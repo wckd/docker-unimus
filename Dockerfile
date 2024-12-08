@@ -2,7 +2,7 @@ FROM alpine:3.21
 
 ENV DOWNLOAD_URL=https://download.unimus.net/unimus/-%20Latest/Unimus.jar
 
-RUN apk update --no-cache && apk add --no-cache curl less wget tzdata iputils-ping openjdk11-jre
+RUN apk update --no-cache && apk add --no-cache curl tzdata iputils-ping openjdk11-jre
 
 # Unimus binary download
 RUN curl -L -o /opt/unimus.jar $DOWNLOAD_URL
