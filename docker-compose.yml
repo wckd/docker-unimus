@@ -9,20 +9,20 @@ services:
       - MYSQL_DATABASE=unimus
       - MYSQL_USER=unimus
       - MYSQL_PASSWORD=secret
-      #- TZ=Europe/Budapest
+      #- TZ=Europe/Oslo
     volumes:
       - './db:/var/lib/mysql'
       - '/etc/localtime:/etc/localtime:ro'
     restart: unless-stopped
   unimus:
-    image: croc/unimus
+    image: wckd0/unimus
     environment:
       # base memory params for java
       #- XMX=1024M
       #- XMS=256M
       # OR more customizable JAVA options
       - JAVA_OPTS=-Xms256M -Xmx1024M -Dunimus.core.connect-timeout=20000 -Dunimus.core.inter-connection-delay=1000 -Dunimus.core.cli-expect-timeout=30000
-      - TZ=Europe/Budapest
+      - TZ=Europe/Oslo
     volumes:
       - './config:/etc/unimus'
       #- '/etc/localtime:/etc/localtime:ro'
