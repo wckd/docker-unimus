@@ -1,5 +1,8 @@
 FROM alpine:3.21
 
+LABEL org.opencontainers.image.source = "https://github.com/wckd/docker-unimus"
+LABEL org.opencontainers.image.url = "https://hub.docker.com/r/wckd0/unimus"
+
 ENV DOWNLOAD_URL=https://download.unimus.net/unimus/-%20Latest/Unimus.jar
 
 RUN apk add --no-cache curl tzdata iputils-ping openjdk17-jre
