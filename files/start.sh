@@ -1,3 +1,5 @@
+#!/bin/sh
+
 JAVA_EXTRA_PARAMS=""
 
 [ ! -z "$XMS" ] &&  { JAVA_EXTRA_PARAMS="$JAVA_EXTRA_PARAMS -Xms$XMS"; }
