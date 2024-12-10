@@ -1,4 +1,4 @@
 #!/bin/bash
 
 docker buildx create --name multiarch --use
-docker buildx build . -t wckd0/unimus -f Dockerfile --platform linux/arm64,linux/amd64 --push
+docker buildx build --sbom=true --provenance=true . -t wckd0/unimus -f Dockerfile --platform linux/arm64,linux/amd64 --push
