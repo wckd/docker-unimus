@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.url = "https://hub.docker.com/r/wckd0/unimus"
 
 ENV DOWNLOAD_URL=https://download.unimus.net/unimus/-%20Latest/Unimus.jar
 
-RUN apk add --no-cache curl tzdata iputils-ping openjdk17-jre
+RUN apk add --no-cache curl tzdata iputils-ping openjdk17-jre-headless
 
 # Unimus binary download
 RUN curl -L -o /opt/unimus.jar $DOWNLOAD_URL
