@@ -16,6 +16,4 @@ COPY --chmod=755 files/start.sh /opt/
 
 EXPOSE 8085
 
-ENTRYPOINT ["/sbin/tini", "--"]
-
-CMD ["/opt/start.sh"]
+ENTRYPOINT ["/sbin/tini", "--", "/opt/start.sh"]
