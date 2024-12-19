@@ -16,6 +16,6 @@ COPY --chmod=755 files/start.sh /opt/
 
 EXPOSE 8085
 
-HEALTHCHECK --start-period=10s CMD curl --fail http://localhost:8085 || exit 1
+HEALTHCHECK --start-period=30s --interval=300s CMD curl --fail http://localhost:8085 || exit 1
 
 ENTRYPOINT ["/sbin/tini", "-e 143", "--", "/opt/start.sh"]
