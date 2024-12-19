@@ -1,7 +1,7 @@
 FROM alpine:3.21
 
-LABEL org.opencontainers.image.source = "https://github.com/wckd/docker-unimus"
-LABEL org.opencontainers.image.url = "https://hub.docker.com/r/wckd0/unimus"
+LABEL org.opencontainers.image.source="https://github.com/wckd/docker-unimus"
+LABEL org.opencontainers.image.url="https://hub.docker.com/r/wckd0/unimus"
 
 ENV DOWNLOAD_URL=https://download.unimus.net/unimus/-%20Latest/Unimus.jar
 
@@ -15,5 +15,7 @@ RUN if [ -f /opt/checksum.signed ]; then echo "Checking checksum..."; sha1sum /o
 COPY --chmod=755 files/start.sh /opt/
 
 EXPOSE 8085
+
+HEALTHCHECK --start-period=10s CMD curl --fail http://localhost:8085 || exit 1
 
 ENTRYPOINT ["/sbin/tini", "-e 143", "--", "/opt/start.sh"]
