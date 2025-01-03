@@ -52,7 +52,7 @@ Good for a test, but not too secure.
 
 ## Docker compose
 
-I've written a `docker-compose.yml` file for easier start with the database. This is the recommended method.
+Use the `docker-compose.yml` file for easier start with the database. This is the recommended method.
 
 Start:
 ```
