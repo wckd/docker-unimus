@@ -33,7 +33,7 @@ Configuration and HSQL databases files is in `/etc/unimus` folder in the contain
 Start your MySQL container for Unimus:
 
 ```
-docker run -tid --name=unimus-db -v /srv/unimus/db:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=supersecret -e MYSQL_DATABASE=unimus -e MYSQL_USER=unimus -e MYSQL_PASSWORD=secret mariadb
+docker run -tid --name=unimus-db -v /srv/unimus/db:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=supersecret -e MYSQL_DATABASE=unimus -e MYSQL_USER=unimus -e MYSQL_PASSWORD=secret mariadb:lts
 ```
 
 Start your Unimus:
@@ -77,7 +77,7 @@ You have to register on https://unimus.net/ for license keys.
 If you want to update unimus with this "stack":
   - stop all containers ( example: `docker stop unimus unimus-db` or `docker-compose stop` )
   - remove all containers ( example: `docker rm -v unimus unimus-db` or `docker-compose rm -v -f` )
-  - pull new images ( example: `docker pull wckd0/unimus` and `docker pull mariadb` or remove images to pull new `docker rmi wckd0/unimus mariadb` )
+  - pull new images ( example: `docker pull wckd0/unimus` and `docker pull mariadb:lts` or remove images to pull new `docker rmi wckd0/unimus mariadb:lts` )
   - start the stack again
 
 
